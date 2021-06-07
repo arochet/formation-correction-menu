@@ -1,17 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Menu
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-list>
+    <!-- Liste des éléments correspondants au menu-->
+    <div *ngFor="let plat of platService.listPlat">
+      <!-- Passe dans le component les éléments de plat (titre et image)-->
+      <app-item-plat [titre]="plat.titre" [image]="plat.image" [canAjoutPanier]="true"></app-item-plat>
+    </div>
+  </ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Bouton pour ajouter un menu -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" (click)="buttonAjouterPlat()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

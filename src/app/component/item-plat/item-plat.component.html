@@ -1,0 +1,12 @@
+<ion-item>
+  <!-- Image carré -->
+  <ion-thumbnail slot="start">
+    <!-- Un ion img peut prendre en src un lien qui affiche une image -->
+    <ion-img [src]="image"></ion-img>
+  </ion-thumbnail>
+
+  <!-- Text -->
+  <ion-label>{{titre}}</ion-label>
+  
+  <ion-button *ngIf="canAjoutPanier" slot="end">Ajouter au Panier</ion-button>
+</ion-item>
