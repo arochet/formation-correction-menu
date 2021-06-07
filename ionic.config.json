@@ -1,0 +1,7 @@
+{
+  "name": "formation-menu-correction",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
