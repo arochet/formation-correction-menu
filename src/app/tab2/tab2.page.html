@@ -9,9 +9,9 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <!-- Liste des éléments correspondants au menu-->
-    <div *ngFor="let plat of platService.listPlat">
+    <div *ngFor="let plat of platService.getListPanier()">
       <!-- Passe dans le component les éléments de plat (titre et image)-->
-      <app-item-plat [titre]="plat.titre" [image]="plat.image" [canAjoutPanier]="false"></app-item-plat>
+      <app-item-plat [plat]="plat" [canAjoutPanier]="false"></app-item-plat>
     </div>
   </ion-list>
 </ion-content>

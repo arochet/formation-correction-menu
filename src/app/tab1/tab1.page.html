@@ -12,7 +12,7 @@
     <!-- Liste des éléments correspondants au menu-->
     <div *ngFor="let plat of platService.listPlat">
       <!-- Passe dans le component les éléments de plat (titre et image)-->
-      <app-item-plat [titre]="plat.titre" [image]="plat.image" [canAjoutPanier]="true"></app-item-plat>
+      <app-item-plat [plat]="plat" [canAjoutPanier]="true"></app-item-plat>
     </div>
   </ion-list>
 

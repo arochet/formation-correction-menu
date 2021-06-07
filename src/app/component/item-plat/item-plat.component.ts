@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Plat } from 'src/app/model/plat';
+import { PanierService } from 'src/app/service/panier.service';
 
 @Component({
   selector: 'app-item-plat',
@@ -7,12 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemPlatComponent implements OnInit {
 
-  @Input() titre: string = "";//Saisir cette variable dans <app-item-plat titre="Hamburger">
-  @Input() image: string = "";
+  @Input() plat: Plat;//Saisir cette variable dans <app-item-plat [plat]="plat">
   @Input() canAjoutPanier: boolean = false;
 
-  constructor() { }
+  constructor(public panierService: PanierService) { }
 
   ngOnInit() {}
 
+  buttonAjoutPanier() {
+    this.panierService.ajoutPlat(this.plat.id);
+  }
 }

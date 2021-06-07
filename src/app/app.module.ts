@@ -13,6 +13,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ComponentModule } from './component/component.module';
+import { PanierService } from './service/panier.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAkFmxJ-lByjJVORRENE7NWwqHcg47tw6A",
@@ -34,7 +35,7 @@ export const firebaseConfig = {
     AngularFireStorageModule,
     ComponentModule
     ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PlatService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PlatService, PanierService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
